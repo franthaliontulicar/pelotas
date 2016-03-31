@@ -20,9 +20,9 @@ import java.util.Random;
 
 public class BoxBall
 {
-    private static final int GRAVITY = 3;  // effect of gravity
+    private static final int GRAVITY = 0;  // effect of gravity
 
-    private int ballDegradation = 2;
+    private int ballDegradation = 1;
     private Ellipse2D.Double circle;
     private Color color;
     private int diameter;
@@ -94,8 +94,8 @@ public class BoxBall
         
             xPosition +=1;
         }
-        else
-        {
+        else{
+        
             xPosition -=1;
         }
 
@@ -103,6 +103,7 @@ public class BoxBall
         if(((xPosition <= 50) || ((xPosition  >= 450 - diameter)))) {
             dirIzquierda = !dirIzquierda;
         }
+        
         if(((yPosition <= 50)) || ((yPosition  >= 450- diameter))){
             dirArriba = !dirArriba;
         }

@@ -67,4 +67,32 @@ public class BallDemo
 
        
     }
+    
+    public void boxBounce(int numBolas){
+        int ground = 400;
+        myCanvas.setVisible(true);
+        myCanvas.drawLine(50, 50, 450, 50);
+        myCanvas.drawLine(450, 50, 450, 450);
+        myCanvas.drawLine(450, 450, 50, 450);
+        myCanvas.drawLine(50, 450, 50, 50);
+        
+        int index = 0;
+        Random rand = new Random();
+        int xPo;
+        int yPo;
+        int dia;
+        boolean direccion;
+        ArrayList<BoxBall> pelotas = new ArrayList<BoxBall>();
+         while(numBolas > index){
+            Color col = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
+            xPo = rand.nextInt(70);
+            yPo = rand.nextInt(70);
+            dia = rand.nextInt(20);
+            direccion = rand.nextBoolean();
+            pelotas.add(new BoxBall(xPo, yPo, dia, col, ground, myCanvas,direccion));
+            index++;
+
+        }
+    
+    }
 }

@@ -85,12 +85,22 @@ public class BallDemo
         ArrayList<BoxBall> pelotas = new ArrayList<BoxBall>();
          while(numBolas > index){
             Color col = new Color(rand.nextInt(256), rand.nextInt(256), rand.nextInt(256));
-            xPo = rand.nextInt(70);
-            yPo = rand.nextInt(70);
+            xPo = rand.nextInt(300) + 20;
+            yPo = rand.nextInt(420) + 20;
             dia = rand.nextInt(20);
             direccion = rand.nextBoolean();
             pelotas.add(new BoxBall(xPo, yPo, dia, col, ground, myCanvas,direccion));
             index++;
+
+        }
+        
+        boolean finished =  false;
+        while(!finished) {
+            myCanvas.wait(50);           
+            for(int i = 0;i < pelotas.size();i++)
+            {
+                pelotas.get(i).move();
+            }
 
         }
     
